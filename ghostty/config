@@ -3,7 +3,7 @@ theme = catppuccin-mocha
 
 # Font configuration (smaller size as requested)
 font-family = "JetBrainsMono Nerd Font"
-font-size = 13
+font-size = 12
 
 # Glass translucency effect
 background-opacity = 0.85

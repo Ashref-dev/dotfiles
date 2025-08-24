@@ -104,7 +104,7 @@ export THEFUCK_REQUIRE_CONFIRMATION=False
 eval $(thefuck --alias)
 
 # bun completions
-[ -s "/Users/mohamedashrefbenabdallah/.bun/_bun" ] && source "/Users/mohamedashrefbenabdallah/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
@@ -182,7 +182,7 @@ export ANDROID_AVD_HOME="$ANDROID_SDK_ROOT/avd"
 export PATH="$PATH:$ANDROID_CMD_LINE_TOOLS/bin:$ANDROID_SDK_ROOT:$ANDROID_PLATFORM_TOOLS"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
-fpath=(/Users/mohamedashrefbenabdallah/.docker/completions $fpath)
+fpath=($HOME/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
 # End of Docker CLI completions
@@ -197,5 +197,4 @@ if [[ -n $CURSOR_TRACE_ID ]]; then
   preexec() { print -Pn "\e]133;C;\a" }
 fi
 
-PATH=~/.console-ninja/.bin:$PATH
 eval "$(zoxide init zsh)"

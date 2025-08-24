@@ -5,7 +5,7 @@
 ## Structure
 ```
 ├── ghostty/config              # Glass translucent gray, Catppuccin theme, font size 14
-├── tmux/.tmux.conf            # Default prefix Ctrl+B, vim navigation, Catppuccin theme, plugins
+├── tmux/.tmux.conf            # Prefix Ctrl+A, vim navigation, theme, plugins
 ├── zsh/.zshrc                 # Git/Docker aliases, zoxide integration
 └── workspaces/ashref.tn/      # Custom tmux workspace script
 ```
@@ -24,4 +24,4 @@ source ~/.zshrc
 tmux source ~/.tmux.conf
 ```
 
-**Note:** Restart Ghostty after deployment. Press `Ctrl+B` then `I` in tmux to install plugins. Use `Ctrl+H/J/K/L` for seamless vim/tmux navigation.
+**Note:** Restart Ghostty after deployment. Press `Ctrl+A` then `I` in tmux to install plugins. Use `Ctrl+H/J/K/L` for seamless vim/tmux navigation.
