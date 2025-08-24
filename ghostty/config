@@ -1,0 +1,20 @@
+# Colors: Use Catppuccin Mocha theme but override background with neutral gray
+theme = catppuccin-mocha
+
+# Font configuration (smaller size as requested)
+font-family = "JetBrainsMono Nerd Font"
+font-size = 13
+
+# Glass translucency effect
+background-opacity = 0.85
+background-blur = 40
+
+# UI preferences
+mouse-hide-while-typing = true
+window-decoration = true
+
+# macOS specific settings
+macos-option-as-alt = true
+
+# Optional: Quick terminal keybinding (uncomment to use)
+# keybind = global:cmd+/=toggle_quick_terminal
