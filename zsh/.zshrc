@@ -11,7 +11,15 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-completions)
 # Load Oh My Zsh
 source $ZSH/oh-my-zsh.sh
 
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# Cursor Terminal Integration - optimize for AI agent compatibility
+if [[ -n "$CURSOR_AGENT" ]]; then
+  # Skip Powerlevel10k theme when Cursor Agent runs for better compatibility
+  # Use simple prompt instead to avoid interference with terminal output
+  PROMPT='%n@%m %1~ %# '
+else
+  # Load Powerlevel10k theme for normal shell sessions
+  [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+fi
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -141,6 +149,22 @@ alias dps="docker ps"
 alias dpa="docker ps -a"
 alias dl="docker ps -l -q"
 alias dx="docker exec -it"
+
+# Bun aliases for faster development workflow
+alias brb="bun run build"
+alias brd="bun run dev"
+alias bd="bun dev"
+alias brt="bun run test"
+alias brl="bun run lint"
+# Custom bun run command: br <script-name>
+br() {
+    if [ -z "$1" ]; then
+        echo "Usage: br <script-name>"
+        echo "Example: br lint:e2e"
+        return 1
+    fi
+    bun run "$1"
+}
 
 # Directory navigation aliases (exact from guide)
 alias ..="cd .."
