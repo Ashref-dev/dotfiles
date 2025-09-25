@@ -176,14 +176,22 @@ alias ......="cd ../../../../.."
 # Replace cd with zoxide for smart navigation
 alias cd="z"
 
-# Save all commands to history
+# Save all commands to history - enhanced for VS Code terminal
 HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=99000          # Increased from 10000 - commands kept in memory
+SAVEHIST=99000          # Increased from 10000 - commands saved to file
+HISTFILESIZE=200000     # Maximum history file size
 
-# Share history between sessions
-setopt inc_append_history
-setopt share_history
+# Enhanced history options for better VS Code terminal experience
+setopt inc_append_history     # Write to history file immediately
+setopt share_history          # Share history between all sessions
+setopt hist_ignore_dups       # Don't record duplicate commands
+setopt hist_ignore_all_dups   # Delete old duplicate commands
+setopt hist_ignore_space      # Don't record commands starting with space
+setopt hist_find_no_dups      # Don't show duplicates when searching
+setopt hist_save_no_dups      # Don't save duplicate commands to file
+setopt hist_verify            # Show command before executing from history
+setopt hist_expand            # Expand history substitutions
 
 # Bind a custom key (e.g., Ctrl+F) to fzf history search
 fzf-history-widget() {
